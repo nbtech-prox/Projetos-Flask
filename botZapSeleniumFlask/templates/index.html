@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enviar Mensagens WhatsApp</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Enviar Mensagens Para Clientes do WhatsApp</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".xlsx">
+        <button type="submit">Enviar Mensagens</button>
+    </form>
+</body>
+</html>
