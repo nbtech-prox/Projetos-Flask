@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from time import sleep
 import urllib.parse
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -15,8 +15,8 @@ def index():
         workbook = openpyxl.load_workbook(file)
         pagina_cliente = workbook['folha']
 
-        # Configuração do WebDriver do Selenium
         chrome_options = webdriver.ChromeOptions()
+
         chrome_options.add_argument(
             'user-data-dir=/home/nb/.config/google-chrome/Default/WP')
         navegador = webdriver.Chrome(options=chrome_options)
@@ -41,7 +41,7 @@ def index():
                 By.XPATH, '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button/span').click()
             sleep(5)
 
-        navegador.quit()  # Fecha o navegador após o envio das mensagens
+        navegador.quit()
 
         return "Mensagens enviadas com sucesso!"
 

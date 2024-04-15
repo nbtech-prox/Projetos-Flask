@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-    <title>Enviar Mensagens WhatsApp</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <title>Enviar Mensagens Para Clientes do WhatsApp</title>
 </head>
 <body>
-    <h1>Enviar Mensagens Para Clientes do WhatsApp</h1>
-    <form method="post" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".xlsx">
-        <button type="submit">Enviar Mensagens</button>
-    </form>
+    <header>
+        <h1>Enviar Mensagens Para Clientes do WhatsApp</h1>
+    </header>
+    <section>
+        <form class="form" method="post" enctype="multipart/form-data">
+            <div class="input-div">
+                <input type="file" id="file" accept="xlsx" name="file" required onchange="updateLabel()" />
+                <label for="file">Click aqui para selecionar o arquivo em formato XLSX</label>
+            </div>
+            <div class="button-div">
+                <button class="button" type="submit">Enviar Mensagens</button>
+            </div>
+        </form>
+    </section>
 </body>
 </html>
