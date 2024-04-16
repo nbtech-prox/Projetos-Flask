@@ -10,6 +10,7 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    message = None
     if request.method == 'POST':
         file = request.files['file']
         workbook = openpyxl.load_workbook(file)
@@ -43,9 +44,9 @@ def index():
 
         navegador.quit()
 
-        return "Mensagens enviadas com sucesso!"
+        message = 'Mensagens enviadas com sucesso!'
 
-    return render_template('index.html')
+    return render_template('index.html', message=message)
 
 
 if __name__ == '__main__':

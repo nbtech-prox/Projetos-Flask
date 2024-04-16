@@ -20,6 +20,11 @@
                 <button class="button" type="submit">Enviar Mensagens</button>
             </div>
         </form>
+        <div id="message">
+            {% if message %}
+            <p class="message-p">{{ message }}</p>
+            {% endif %}
+        </div>
     </section>
 </body>
 </html>
