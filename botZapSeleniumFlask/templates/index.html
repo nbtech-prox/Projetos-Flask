@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="{{ url_for('static', filename='reload.js') }}"></script>
     <title>Enviar Mensagens Para Clientes do WhatsApp</title>
 </head>
 <body>
@@ -12,19 +13,38 @@
     </header>
     <section>
         <form class="form" method="post" enctype="multipart/form-data">
+            <h2>Enviar mensagens do Excel:</h2>
             <div class="input-div">
-                <input type="file" id="file" accept="xlsx" name="file" required onchange="updateLabel()" />
-                <label for="file">Click aqui para selecionar o arquivo em formato XLSX</label>
+                <input type="file" id="file" accept=".xlsx" name="file" onchange="updateLabel()" required />
+                <label class="labelxlsx" for="file">Click aqui para selecionar o arquivo em formato XLSX</label>
             </div>
             <div class="button-div">
                 <button class="button" type="submit">Enviar Mensagens</button>
             </div>
         </form>
-        <div id="message">
-            {% if message %}
-            <p class="message-p">{{ message }}</p>
-            {% endif %}
-        </div>
+        <hr>
+        <form method="post">
+            <h2 class="title">Enviar mensagem para número específico:</h2>
+            <div class="input-div">
+                <input type="tel" id="number" name="number" placeholder="Insira o número do cliente" required
+                    pattern="[0-9]{9}">
+            </div>
+            <div class="input-div">
+                <textarea id="custom_message" name="custom_message" rows="4" cols="50" placeholder="Digite a mensagem"
+                    required></textarea><br><br>
+            </div>
+            <div class="button-div">
+                <p><button class="button" type="submit">Enviar Mensagem</button></p>
+            </div>
+        </form>
     </section>
+    <div>
+        <button class="btn" type="button" onclick="reload()">Atualizar</button>
+    </div>
+    <div id="message">
+        {% if message %}
+        <p class="message-p">{{ message }}</p>
+        {% endif %}
+    </div>
 </body>
 </html>

@@ -1,6 +1,7 @@
-body* {
+* {
     padding: 0;
     margin: 0;
+    font-family: "Gugi";
 }
 
 header {
@@ -9,8 +10,22 @@ header {
     justify-content: center;
     padding: 20px;
     background-color: #04AA6D;
-    font-family: 'Gugi';
     color: white;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+hr {
+    margin-top: 50px;
 }
 
 .form {
@@ -29,20 +44,21 @@ input[type="file"] {
     display: none;
 }
 
-label {
-    font-family: 'Gugi';
+.labelxlsx {
     background-color: white;
     border: 2px solid #04AA6D;
+    text-align: center;
     width: 500px;
     height: 40px;
     padding-top: 20px;
 }
 
 .button-div {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .button {
+    cursor: pointer;
     background-color: #04AA6D;
     border: 0.2em;
     border-radius: 10em;
@@ -50,10 +66,52 @@ label {
     width: 10em;
     font-weight: 600;
     text-align: center;
-    font-family: 'Gugi';
-    font-size: 0.8em;
+    font-size: 16px;
     color: white;
     margin-left: 20px;
+}
+
+p {
+    text-align: center;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: #04AA6D;
+    border: 0.2em;
+    border-radius: 10em;
+    height: 4em;
+    width: 10em;
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    position: fixed;
+    float: top;
+    right: 20px;
+    bottom: 20px;
+    z-index: 100;
+}
+
+#number {
+    background-color: white;
+    border: 2px solid #04AA6D;
+    text-align: center;
+    width: 500px;
+    height: 40px;
+    padding-top: 5px;
+}
+
+#custom_message {
+    font-size: 20px;
+    background-color: white;
+    border: 2px solid #04AA6D;
+}
+
+::placeholder {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 40px;
 }
 
 #message {
@@ -65,7 +123,6 @@ label {
 
 .message-p {
     text-align: center;
-    font-family: 'Gugi';
     background-color: white;
     border: 2px solid #04AA6D;
     width: 500px;
